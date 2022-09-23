@@ -29,5 +29,20 @@ public class Candidato {
     private String RG;
 
     @Column(nullable = false)
-    private Instant data;
+    private Instant dtNascimento;
+
+    @Column(length = 60, nullable = false)
+    private String cidade;
+
+    @Column(length = 60, nullable = false)
+    private String bairro;
+
+    @Column(length = 60, nullable = false)
+    private String rua;
+
+    @Column(length = 60, nullable = false)
+    private String numero;
+
+    @Column(length = 60, nullable = false)
+    private String cep;
 }

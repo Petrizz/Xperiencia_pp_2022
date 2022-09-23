@@ -12,11 +12,16 @@ import javax.persistence.*;
 @Entity (name = "Oferta")
 public class Oferta {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idOferta;
-   // @EmbeddedId
-    //private OfertaId idOferta = new OfertaId();
+   // @Id
+  //  @GeneratedValue(strategy = GenerationType.IDENTITY)
+ //   private Long idOferta;
+
+    @EmbeddedId
+    private OfertaId id = new OfertaId();
+
+    @ManyToOne
+    @MapsId("idEmpregador")
+    private Empregador empregador;
 
  //   @ManyToOne
   //  @JoinColumn(name = "id_empregador", nullable = false)
