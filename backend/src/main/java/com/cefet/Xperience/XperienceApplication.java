@@ -30,8 +30,13 @@ public class XperienceApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args){
-        Empregador emp = new Empregador(1L, "test","dad");
+        Empregador emp = new Empregador("test","dad");
         emp = empregadorRepository.save(emp);
         System.out.println(emp);
+
+      //  Oferta of = new Oferta(emp, "sa", "as");
+       // of = OfertaRepository.save(of);
+        //System.out.println(of);
+
     }
 }

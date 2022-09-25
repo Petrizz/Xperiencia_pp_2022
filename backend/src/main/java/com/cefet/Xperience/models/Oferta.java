@@ -18,7 +18,11 @@ public class Oferta {
 
     @EmbeddedId
     private OfertaId id = new OfertaId();
-
+/*
+    @ManyToOne
+    @MapsId("idOferta")
+    private long Oferta;
+   */
     @ManyToOne
     @MapsId("idEmpregador")
     private Empregador empregador;
@@ -33,7 +37,14 @@ public class Oferta {
     @Column(nullable = false)
     private String funcao;
 
-    @Column(nullable = false)
+    public Oferta(Empregador emp, String titulo, String funcao) {
+      //  this.Oferta = 1;
+        this.empregador = emp;
+        this.titulo = titulo;
+        this.funcao = funcao;
+    }
+
+   /* @Column(nullable = false)
     private String descricao;
 
     @Column(nullable = false)
@@ -42,7 +53,7 @@ public class Oferta {
     @Column(nullable = false)
     private String palavrasChaves;
 
-    private String remuneracao;
+    private String remuneracao;*/
 
 
 }

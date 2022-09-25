@@ -20,10 +20,6 @@ public class AvaliacaoCand {
     private Oferta oferta;
 
     @ManyToOne
-    @MapsId("idEmpregador")
-    private Empregador empregador;
-
-    @ManyToOne
     @MapsId("idCandidato")
     private Candidato candidato;
 

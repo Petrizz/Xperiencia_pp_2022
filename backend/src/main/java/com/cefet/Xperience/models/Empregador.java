@@ -3,9 +3,7 @@ package com.cefet.Xperience.models;
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @ToString
 @NoArgsConstructor
@@ -17,15 +15,27 @@ public class Empregador {
     //@ID Diz que a proximo atributo vai ser o id e o generated diz que vai ser auto incremento
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idEmpregador;
-
-   // @OneToMany
-  //  private List<Oferta> ofertas = new ArrayList<Oferta>();
+    private long idEmpregador;
 
     @Column(length = 60, nullable = false)
     private String nome;
 
-    @Column(length = 16, nullable = false)
+    @Column(length =16 )
     private String cpf;
+
+    public Empregador(String test, String dad) {
+        setNome(test);
+        setCpf(dad);
+    }
+
+
+   /* @Column(length = 60)
+    private String cnpj;
+
+    @Column(length = 60, nullable = false)
+    private Instant data;
+
+    @Column(length = 16, nullable = false)
+    private String rg;*/
 
 }
