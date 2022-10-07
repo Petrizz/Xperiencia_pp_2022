@@ -31,10 +31,8 @@ public class Empregador {
 
    /* @Column(length = 60)
     private String cnpj;
-
     @Column(length = 60, nullable = false)
     private Instant data;
-
     @Column(length = 16, nullable = false)
     private String rg;*/
 

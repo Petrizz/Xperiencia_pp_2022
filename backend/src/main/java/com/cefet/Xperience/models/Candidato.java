@@ -3,7 +3,6 @@ package com.cefet.Xperience.models;
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.Instant;
 
 
 @ToString

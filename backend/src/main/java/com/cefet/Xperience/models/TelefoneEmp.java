@@ -17,7 +17,7 @@ public class TelefoneEmp {
 
     @ManyToOne
     @MapsId("idPessoa")
-    private Empregador empregador;
+    private Candidato empregador;
 
     @Column(nullable = false)
     private String Numbero;

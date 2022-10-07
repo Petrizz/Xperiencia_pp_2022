@@ -22,11 +22,11 @@ public class Oferta {
     @ManyToOne
     @MapsId("idOferta")
     private long Oferta;
-   */
 
- //   @ManyToOne
-  //  @JoinColumn(name = "id_empregador", nullable = false)
-   // private Empregador idEmpregador;
+
+    @ManyToOne
+    @JoinColumn(name = "id_empregador", nullable = false)
+    private Candidato idCandidato;*/
 
     @Column(nullable = false)
     private String titulo;
@@ -34,7 +34,7 @@ public class Oferta {
     @Column(nullable = false)
     private String funcao;
 /*
-    public Oferta(Empregador emp, String titulo, String funcao) {
+    public Oferta(Candidato emp, String titulo, String funcao) {
       //  this.Oferta = 1;
         this.empregador = emp;
         this.titulo = titulo;
