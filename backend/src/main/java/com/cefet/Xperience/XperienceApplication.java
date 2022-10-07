@@ -3,6 +3,7 @@ package com.cefet.Xperience;
 import com.cefet.Xperience.models.Candidato;
 import com.cefet.Xperience.models.Empregador;
 import com.cefet.Xperience.models.Oferta;
+import com.cefet.Xperience.models.OfertaId;
 import com.cefet.Xperience.repository.CandidatoRepository;
 import com.cefet.Xperience.repository.EmpregadorRepository;
 import com.cefet.Xperience.repository.OfertaRepository;
@@ -34,9 +35,14 @@ public class XperienceApplication implements ApplicationRunner {
         emp = empregadorRepository.save(emp);
         System.out.println(emp);
 
-      //  Oferta of = new Oferta(emp, "sa", "as");
-       // of = OfertaRepository.save(of);
-        //System.out.println(of);
 
+        OfertaId tst = new OfertaId(1L ,emp.getIdEmpregador());
+        Oferta of = new Oferta( tst, "sa", "as");
+        of = ofertaRepository.save(of);
+        System.out.println(of);
+
+        Candidato cad = new Candidato("Pedro", "1033411111", "MG_12", "18212003", "RAul", "Janeiro", "Segunda rua", "12", "35323000");
+        cad = candidatoRepository.save(cad);
+        System.out.println(cad);
     }
 }

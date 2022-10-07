@@ -23,9 +23,6 @@ public class Oferta {
     @MapsId("idOferta")
     private long Oferta;
    */
-    @ManyToOne
-    @MapsId("idEmpregador")
-    private Empregador empregador;
 
  //   @ManyToOne
   //  @JoinColumn(name = "id_empregador", nullable = false)
@@ -36,13 +33,13 @@ public class Oferta {
 
     @Column(nullable = false)
     private String funcao;
-
+/*
     public Oferta(Empregador emp, String titulo, String funcao) {
       //  this.Oferta = 1;
         this.empregador = emp;
         this.titulo = titulo;
         this.funcao = funcao;
-    }
+    }*/
 
    /* @Column(nullable = false)
     private String descricao;

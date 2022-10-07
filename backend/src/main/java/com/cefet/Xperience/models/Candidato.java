@@ -29,7 +29,8 @@ public class Candidato {
     private String RG;
 
     @Column(nullable = false)
-    private Instant dtNascimento;
+    private String dtNascimento;
+   // private Instant dtNascimento; instant esta no video antes de api min 10:58
 
     @Column(length = 60, nullable = false)
     private String cidade;
@@ -45,4 +46,16 @@ public class Candidato {
 
     @Column(length = 60, nullable = false)
     private String cep;
+
+    public Candidato(String nome, String cpf, String rg, String dtNascimento, String cidade, String bairro, String rua, String numero, String cep) {
+        this.nome = nome;
+        this.bairro = bairro;
+        this.cep = cep;
+        this.cpf = cpf;
+        this.dtNascimento = dtNascimento;
+        this.cidade = cidade;
+        this.RG = rg;
+        this.numero = numero;
+        this.rua = rua;
+    }
 }
