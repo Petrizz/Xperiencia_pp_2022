@@ -16,7 +16,7 @@ public class Candidato {
     //@ID Diz que a proximo atributo vai ser o id e o generated diz que vai ser auto incremento
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idCandidato;
+    private Long idCandidato;
 
     @Column(length = 60, nullable = false)
     private String nome;
@@ -57,4 +57,5 @@ public class Candidato {
         this.numero = numero;
         this.rua = rua;
     }
+
 }

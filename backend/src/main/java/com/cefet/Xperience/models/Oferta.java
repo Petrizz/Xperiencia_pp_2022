@@ -12,45 +12,60 @@ import javax.persistence.*;
 @Entity (name = "Oferta")
 public class Oferta {
 
-   // @Id
-  //  @GeneratedValue(strategy = GenerationType.IDENTITY)
- //   private Long idOferta;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idOferta;
 
-    @EmbeddedId
-    private OfertaId id = new OfertaId();
-/*
-    @ManyToOne
-    @MapsId("idOferta")
-    private long Oferta;
-
-
-    @ManyToOne
-    @JoinColumn(name = "id_empregador", nullable = false)
-    private Candidato idCandidato;*/
-
-    @Column(nullable = false)
+    @Column
     private String titulo;
-
+/*
     @Column(nullable = false)
     private String funcao;
-/*
-    public Oferta(Candidato emp, String titulo, String funcao) {
-      //  this.Oferta = 1;
-        this.empregador = emp;
-        this.titulo = titulo;
-        this.funcao = funcao;
-    }*/
 
-   /* @Column(nullable = false)
+    @Column
     private String descricao;
 
-    @Column(nullable = false)
+    @Column
     private String cargaHoraria;
 
-    @Column(nullable = false)
+    @Column
     private String palavrasChaves;
 
-    private String remuneracao;*/
+    @Column
+    private String remuneraca;
+*/
+    @ManyToOne
+    @JoinColumn(name = "id_empregador", nullable = false)
+    private Empregador idEmpregador;
+
+    @Column
+    private String descricaoEmpregador;
+
+    @Column
+    private String notaEmpregador;
+
+    @ManyToOne
+    @JoinColumn(name = "id_candidato")
+    private Candidato idCandidato;
+
+    @Column
+    private String descricaoCandidato;
+
+    @Column
+    private String notaCandidato;
 
 
+    public Oferta(String titulo, Empregador emp, String descricaoEmpregador, String notaEmp, Candidato cad, String descricaoCandidato, String notaCandidato) {
+        this.titulo = titulo;
+        this.idEmpregador = emp;
+        this.descricaoEmpregador = descricaoEmpregador;
+        this.notaEmpregador = notaEmp;
+        this.idCandidato = cad;
+        this.descricaoCandidato = descricaoCandidato;
+        this.notaCandidato = notaCandidato;
+    }
+
+    public Long getId() {
+        return this.idOferta;
+    }
 }

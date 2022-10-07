@@ -44,8 +44,8 @@ public class CandidatoController {
 
     @PutMapping("/")
     public ResponseEntity<Candidato> update(@RequestBody Candidato candidato){
-        if (candidato.getId() == null){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Pet id == null");
+        if (candidato.getIdCandidato() == null){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Candidato id == null");
         }
         candidato = candidatoService.save(candidato);
         return ResponseEntity.ok().body(candidato);
@@ -54,7 +54,7 @@ public class CandidatoController {
 
     @PostMapping
     public ResponseEntity<Candidato> create(@RequestBody Candidato candidato){
-        if(candidato.getId() != null){
+        if(candidato.getIdCandidato() != null){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "New ca can't exists id.");
         }
         Candidato result = candidatoService.save(candidato);

@@ -15,7 +15,7 @@ public class Empregador {
     //@ID Diz que a proximo atributo vai ser o id e o generated diz que vai ser auto incremento
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idEmpregador;
+    private Long idEmpregador;
 
     @Column(length = 60, nullable = false)
     private String nome;
@@ -27,6 +27,7 @@ public class Empregador {
         setNome(test);
         setCpf(dad);
     }
+
 
 
    /* @Column(length = 60)
